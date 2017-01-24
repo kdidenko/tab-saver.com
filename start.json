@@ -1,0 +1,14 @@
+{
+  "apps" : [
+	{
+	    "name"        : "tabsaver",
+	    "script"      : "bin/www",
+	    "merge_logs"  : true,
+	    "cwd"         : "./",
+	    "env": {
+	      "PORT":3000,
+	      "NODE_ENV":"development"
+	    }
+	 }
+	]
+}

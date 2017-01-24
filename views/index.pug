@@ -1,5 +1,97 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    span(itemscope, itemtype="http://schema.org/SoftwareApplication")
+        div.container
+            header
+                h1
+                    span(itemprop="name").
+                        TabSaver
+                    span.small(itemprop="softwareVersion").
+                        v2.0
+            section
+                img#rocket-launch(itemprop="image",
+                src="/img/tab-saver/tab-saver-launch.png"
+                alt="Tab Saver. Easy and simple way to save tabs for each browsing session in Google Chrome browser"
+                title="Tab Saver v2.0 - Launch is soon!")
+            main.announcement
+                h2
+                    | Fasten your seatbelts!
+                div.content
+                    p.heading_m
+                        | We're very close
+                    h5
+                        | Getting new #[br]
+                        | #[b TabSaver] ready
+                    p.heading_l.
+                        To launch very soon for #[span.price Free!]
+                    script(type="application/ld+json").
+                        {
+                          "@context": "http://schema.org/",
+                          "@type": "SoftwareApplication",
+                          "name": "Tab Saver",
+                          "operatingSystem": "Google Chrome",
+                          "applicationCategory": "http://schema.org/ChromeExtension",
+                          "aggregateRating":{
+                            "@type": "AggregateRating",
+                            "ratingValue": "4.71",
+                            "ratingCount": "570"
+                          },
+                          "offers":{
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "USD"
+                          }
+                        }
+            main.announcement
+                .g-page(data-href="//plus.google.com/u/0/113733551595901991439"
+                data-theme="dark"
+                data-showcoverphoto="false"
+                data-rel="publisher")
+        #system-message-container
+        section.strip
+            .container.announcement
+                h3
+                    | Feature request form:
+                form#frm-feature.feature-request.form-validate(name="feature", method="post", action="/")
+                    input.required(type="Text", name="jform[contact_name]", required, placeholder="Name:")
+                    input.required(type="Email", name="jform[contact_email]", required, placeholder="Email:")
+                    input.required(type="Text", name="jform[contact_subject]", required, placeholder="Subject:")
+                    textarea#jform_contact_message.required(name="jform[contact_message]", cols="50", rows="10", required, aria-required="true")
+                    label#jform_contact_email_copy-lbl.hasTooltip(for="jform_contact_email_copy", title="Sends a message to the address you have supplied.")
+                        | Send copy to yourself
+                    input#jform_contact_email_copy(type="checkbox", name="jform[contact_email_copy]", value="1")
+                    div.controls
+                    div.form-actions
+                        button.btn.btn-primary.validate(type="submit").
+                            Send Email
+                        input(type="hidden", name="option", value="com_contact")
+                        input(type="hidden", name="task", value="contact.submit")
+                        input(type="hidden", name="return", value="")
+                        input(type="hidden", name="id", value="1:feature-request-form")
+                        input(type="hidden", name="0e54bd0cb82a606d63709bfb3bca5208", value="1")
+                        script(type="text/javascript").
+                            $('#frm-feature').submit(function (e) {
+                                alert(e);
+                                ga('send', 'event', 'Form', 'Submit', 'Feature request form');
+                            });
+        footer.container
+            p.copyright
+                | &copy; 2015 Copyright by
+                a(href="http://www.ito-global.com", target="_blank", title="ITO-Global, LLC")
+                    span(itemprop="publisher" itemscope itemtype="http://schema.org/Organization")
+                        span(itemprop="name").
+                            ITO-Global, LLC
+                | Proudly created for
+                a(href="https://chrome.google.com/webstore/detail/tab-saver/fmjkkhoegfianolbdbceddpgnidbfpmo", title="Tab Saver", target="_blank", itemprop="url")
+                    | TabSaver v 2.0
+                span.social
+                    a(href="https://www.facebook.com/tabsaver", title="Tab Saver on Facebook", target="_blank")
+                        img(src="http://" + host + "/img/social/facebook-icon.png", alt="Like Tab Saver on Facebook", title="Subscribe to Tab Saver Facebook account")
+                    a(href="https://twitter.com/tab_saver" title="Tab Saver on Twitter" target="_blank")
+                        img(src="http://" + host + "/img/social/twitter-icon.png", alt="Follow Tab Saver on Twitter", title="Subscribe to Tab Saver Twitter account")
+                    a(href="https://google.com/+Tabsaver-chrome" title="Tab Saver on Google+" target="_blank")
+                        img(src="http://" + host + "/img/social/google-plus-icon.png", alt="Follow Tab Saver on Google+", title="Subscribe to Tab Saver Google+ account")
+    script(src="/js/plugins.js")
+    script(src="/js/main.js")
+    script(src="https://apis.google.com/js/platform.js", async, defer)
