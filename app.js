@@ -15,9 +15,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // set pretty print
-if (app.get('env') === 'development') {
+/*if (app.get('env') === 'development') {
 	app.locals.pretty = true;
-}
+}*/
+app.locals.pretty = true; //TODO: quick fix for Heroku
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
