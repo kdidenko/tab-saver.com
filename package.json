@@ -18,7 +18,7 @@
     "Extension",
     "Google",
     "Chrome",
-    "Extension",
+    "tab-saver.com",
     "Session",
     "Tabs"
   ],
@@ -30,6 +30,7 @@
   "homepage": "https://github.com/kdidenko/tab-saver.com#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "config": "^1.25.1",
     "cookie-parser": "^1.4.3",
     "debug": "~2.2.0",
     "express": "^4.14.0",
