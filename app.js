@@ -18,7 +18,7 @@ app.set('view engine', 'pug');
 /*if (app.get('env') === 'development') {
 	app.locals.pretty = true;
 }*/
-app.locals.pretty = true; //TODO: quick fix for Heroku
+app.locals.pretty = true; //TODO: quick fix for better html/javascript debugging
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
