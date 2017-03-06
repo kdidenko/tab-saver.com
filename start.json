@@ -1,0 +1,21 @@
+{
+  "apps": [
+    {
+      "name": "tabsaver",
+      "script": "bim/www",
+      "merge_logs": "false",
+      "cwd": "/node/tab-saver.com/",
+      "env": {
+        "COMMON_VARIABLE": "true"
+      },
+      "env_production": {
+        "PORT": "3000",
+        "NODE_ENV": "production"
+      },
+      "env_development": {
+        "PORT": "3000",
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}
